@@ -1,0 +1,16 @@
+{
+  "name": "1",
+  "version": "1.0.0",
+  "description": "Dynamic API Server",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --coverage --verbose",
+    "watch": "jest --watchAll --coverage --verbose"
+  },
+  "keywords": [],
+  "author": "joseph-zabaleta",
+  "license": "ISC"
+}
