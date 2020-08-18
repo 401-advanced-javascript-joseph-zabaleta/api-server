@@ -1,0 +1,32 @@
+{
+  "categories": [
+    {
+      "id": 3,
+      "name": "eletronics",
+      "display_name": "elec02",
+      "description": "electronics desc UPDATED"
+    },
+    {
+      "id": 4,
+      "name": "swagger test",
+      "display_name": "swagger",
+      "description": "swagger desc"
+    }
+  ],
+  "products": [
+    {
+      "id": 2,
+      "category": "General",
+      "name": "kite",
+      "display_name": "Display kite",
+      "description": "Green Kite"
+    },
+    {
+      "id": 4,
+      "category": "swagger product",
+      "name": "swagger product type",
+      "display_name": "swagger product test",
+      "description": "swagger desc product test I was UPDATED with PUT"
+    }
+  ]
+}
