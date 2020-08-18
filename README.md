@@ -55,22 +55,22 @@ Your api will automatically respond to the following endpoints:
 - [x] `logger.js`
     - [x] Execute a `console.log()` containing the request `path`, `method`, and the `requestTime` property of the request object
     - [x] Import this into your server and set it up to run at the application level for all routes
-- [] `404.js`
-    - [] Sends a 404/Not-Found message as the response (does not call `.next()`)
-    - [] Import this into your server and set it up to be “used” after your other routes
-- [] `500.js`
-    - [] Sends a 500/Server Error message as the response (does not call `.next()`)
-    - [] Import this into your server and set it up to be “used” as the last route
+- [x] `404.js`
+    - [x] Sends a 404/Not-Found message as the response (does not call `.next()`)
+    - [x] Import this into your server and set it up to be “used” after your other routes
+- [x] `500.js`
+    - [x] Sends a 500/Server Error message as the response (does not call `.next()`)
+    - [x] Import this into your server and set it up to be “used” as the last route
 
 - Create `routes` within your `server.js` for both “categories” and “products”
     - The “data” for these routes will be contained within the router itself, as an in-memory object or array of objects (your choice)
     - Define CRUD routes to handle requests for both categories and products that will use this in-memory “database”
-        - [] `app.post('/products', (req, res) => {})` … uses the object in the body of the request to create a new “record”
-        - [] `app.get('/products', (req, res) => {})`
-        - [] `app.get('/products/:id', (req, res) => {})`
-        - [] `app.put('/products/:id', (req, res) => {})` … uses the object in the body to replace the record with the :id specified
-        - [] `app.delete('/products/:id', (req, res) => {})` … deletes the record with the :id specified
-        - [] … and repeat for categories
+        - [x] `app.post('/products', (req, res) => {})` … uses the object in the body of the request to create a new “record”
+        - [x] `app.get('/products', (req, res) => {})`
+        - [x] `app.get('/products/:id', (req, res) => {})`
+        - [x] `app.put('/products/:id', (req, res) => {})` … uses the object in the body to replace the record with the :id specified
+        - [x] `app.delete('/products/:id', (req, res) => {})` … deletes the record with the :id specified
+        - [x] … and repeat for categories
 
 - Note that as you build and test this server, your data will be lost every time you restart the server.
 
@@ -81,7 +81,7 @@ Your api will automatically respond to the following endpoints:
 ## User Acceptance Tests
 
 ### Phase 2 Testing
-- [] Use `supergoose` and `supertest` to easily test your server without having to start it.
+- [x] Use `supergoose` and `supertest` to easily test your server without having to start it.
 
 - Write unit tests for the middleware
     - These should be testable in isolation

@@ -12,9 +12,9 @@ beforeEach( () => {
     spyError.mockReset();
 });
 
-describe('web server', () => {
+describe('Integration Tests on the Web Server', () => {
 
-  it('should respond with a 500 on an error', () => {
+  it('Should respond with a 500 on an error', () => {
 
     return mockRequest
       .get('/bad')
@@ -24,7 +24,7 @@ describe('web server', () => {
 
   });
 
-  it('should respond with a 404 on an invalid route', () => {
+  it('Should respond with a 404 on an invalid route', () => {
 
     return mockRequest
       .get('/foobar')
@@ -34,7 +34,7 @@ describe('web server', () => {
 
   });
 
-  it('should respond with a 404 on an invalid method', () => {
+  it('Should respond with a 404 on an invalid method', () => {
 
     return mockRequest
       .post('/')
@@ -44,16 +44,22 @@ describe('web server', () => {
 
   });
 
-  it('should respond properly on request to /api/v1/food', () => {
+  it('Should respond properly on request to /api/v1/products', () => {
 
     return mockRequest
-      .get('/api/v1/food')
+      .get('/api/v1/products')
       .then(results => {
         expect(results.status).toBe(200);
       }).catch(console.error);
 
   });
 
-  // What strategies should we use to test POST, PUT, DELETE?
+  it('Should properly post to /api/v1/products', () => {
+    return mockRequest
+    .post('/api/v1/products')
+    .then(results => {
+        expect(results).toBe(200);
+    }).catch(console.error);
+  });
 
 });
