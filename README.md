@@ -45,16 +45,16 @@ Your api will automatically respond to the following endpoints:
         - [x] should require `lib/server.js` // followed proposed business structure `lib/models/server.js`
         - [x] should require `dotenv`, reading `PORT` from your `.env` file
         - [x] It should call the `.start()` method from the server with the PORT set in your environment
-        - [] `lib/server.js` which will serve as your server ‘module’ … will contain all of the logic for the server
-            - [] Must export an object with a `start()` method (it should not start on it’s own)
+        - [x] `lib/server.js` which will serve as your server ‘module’ … will contain all of the logic for the server
+            - [x] Must export an object with a `start()` method (it should not start on it’s own)
 
 - Create a middleware folder and add 4 middleware modules to it:
-- [] `timestamp.js`
-    - [] Put the current timestamp (formatted like a proper date) on the `request` object in a property called `requestTime`
-    - [] Import this into your server and set it up to run at the application level for all routes
-- [] `logger.js`
-    - [] Execute a `console.log()` containing the request `path`, `method`, and the `requestTime` property of the request object
-    - [] Import this into your server and set it up to run at the application level for all routes
+- [x] `timestamp.js`
+    - [x] Put the current timestamp (formatted like a proper date) on the `request` object in a property called `requestTime`
+    - [x] Import this into your server and set it up to run at the application level for all routes
+- [x] `logger.js`
+    - [x] Execute a `console.log()` containing the request `path`, `method`, and the `requestTime` property of the request object
+    - [x] Import this into your server and set it up to run at the application level for all routes
 - [] `404.js`
     - [] Sends a 404/Not-Found message as the response (does not call `.next()`)
     - [] Import this into your server and set it up to be “used” after your other routes
