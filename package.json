@@ -20,6 +20,7 @@
     "mongoose": "^5.10.0"
   },
   "devDependencies": {
+    "@code-fellows/supergoose": "^1.0.2",
     "supertest": "^4.0.2"
   }
 }
