@@ -76,11 +76,11 @@ Your api will automatically respond to the following endpoints:
 
 ### Phase 3: Modularizing and Persistence
 - Update the `index.js`
-    - [] Require the mongoose library
-    - [] Prior to calling `start()` on your imported server module, it connect to Mongo, via `mongoose`
+    - [x] Require the mongoose library
+    - [x] Prior to calling `start()` on your imported server module, it connect to Mongo, via `mongoose`
 - Prepare the `server.js` for modularization
-    - [] Require the category and product router modules (see the bullet points below)
-    - [] `app.use()` each them in your app so that your routes will respond
+    - [x] Require the category and product router modules (see the bullet points below)
+    - [x] `app.use()` each them in your app so that your routes will respond
 - Write new routing modules for your server
     - [] Create the files/folders: `routes/categories.js` and `routes/product.js`
     - [] Create a router module for each of your data types (in each)
