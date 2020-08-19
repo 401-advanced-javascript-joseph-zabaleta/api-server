@@ -82,12 +82,12 @@ Your api will automatically respond to the following endpoints:
     - [x] Require the category and product router modules (see the bullet points below)
     - [x] `app.use()` each them in your app so that your routes will respond
 - Write new routing modules for your server
-    - [] Create the files/folders: `routes/categories.js` and `routes/product.js`
-    - [] Create a router module for each of your data types (in each)
-        - [] Create an instance of `express.Router()` and export it
-        - [] Move the appropriate route definitions and route handlers from `server.js` here
-        - [] Redefine the definitions as `route` definitions (not `app` definitions)
-        - [] Confirm that your server works as before, but now modular
+    - [x] Create the files/folders: `routes/categories.js` and `routes/product.js`
+    - [x] Create a router module for each of your data types (in each)
+        - [x] Create an instance of `express.Router()` and export it
+        - [x] Move the appropriate route definitions and route handlers from `server.js` here
+        - [x] Redefine the definitions as `route` definitions (not `app` definitions)
+        - [x] Confirm that your server works as before, but now modular
         - [] Begin the conversion from memory data to persistent data …
             - [] Import and initialize the appropriate Mongoose Collection (see bullet points below)
             - [] In your handler methods, rather than change your in-memory data store, call the appropriate model methods
