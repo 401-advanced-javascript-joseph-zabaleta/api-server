@@ -91,18 +91,18 @@ Your api will automatically respond to the following endpoints:
         - [] Begin the conversion from memory data to persistent data …
             - [] Import and initialize the appropriate Mongoose Collection (see bullet points below)
             - [] In your handler methods, rather than change your in-memory data store, call the appropriate model methods
-- [] Add Persistence with Mongoose Collections
+- [x] Add Persistence with Mongoose Collections
     - Work in `lib/models/categories` and `lib/models/products`
-    - [] For each, create both a schema and collection file
+    - [x] For each, create both a schema and collection file
         - i.e. `categories.schema.js` and `categories.collection.js`
 - The schema file should define your data model as a Mongoose schema
 - The collection file should be a class that:
-    - [] Imports the schema
+    - [x] Imports the schema
     - Exports a class with CRUD methods, coded to work with your schema
-        - [] `read()` performs a `find()` query in your schema
-        - [] `create()` performs a `save()` query in your schema for a new record
-        - [] `update()` performs a `findOneByIdAndUpdate()` operation in your schema for an existing record
-        - [] `delete()` performs a `findOneByIdAndDelete()` in your schema for a new record
+        - [x] `read()` performs a `find()` query in your schema
+        - [x] `create()` performs a `save()` query in your schema for a new record
+        - [x] `update()` performs a `findOneByIdAndUpdate()` operation in your schema for an existing record
+        - [x] `delete()` performs a `findOneByIdAndDelete()` in your schema for a new record
 
 
 
