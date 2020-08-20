@@ -16,7 +16,7 @@ describe('Testing Timestamp Middleware Functionality: ', () => {
         let next = jest.fn();
         timestamp(req, res, next);
 
-        let actual = res.requestTime;
+        let actual = req.requestTime;
 
         expect(actual).not.toBeNull();
 

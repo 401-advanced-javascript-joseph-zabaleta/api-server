@@ -4,7 +4,7 @@
 An Express/Node.js based server designed to be a “model agnostic” REST API server, which can perform CRUD operations on any data model
 
 Total Phases: 4
-Current Phase 3
+Current Phase 4
 
 
 ## Feature Tasks and Requirements
@@ -88,9 +88,9 @@ Your api will automatically respond to the following endpoints:
         - [x] Move the appropriate route definitions and route handlers from `server.js` here
         - [x] Redefine the definitions as `route` definitions (not `app` definitions)
         - [x] Confirm that your server works as before, but now modular
-        - [] Begin the conversion from memory data to persistent data …
-            - [] Import and initialize the appropriate Mongoose Collection (see bullet points below)
-            - [] In your handler methods, rather than change your in-memory data store, call the appropriate model methods
+        - [x] Begin the conversion from memory data to persistent data …
+            - [x] Import and initialize the appropriate Mongoose Collection (see bullet points below)
+            - [x] In your handler methods, rather than change your in-memory data store, call the appropriate model methods
 - [x] Add Persistence with Mongoose Collections
     - Work in `lib/models/categories` and `lib/models/products`
     - [x] For each, create both a schema and collection file
@@ -104,7 +104,9 @@ Your api will automatically respond to the following endpoints:
         - [x] `update()` performs a `findOneByIdAndUpdate()` operation in your schema for an existing record
         - [x] `delete()` performs a `findOneByIdAndDelete()` in your schema for a new record
 
-
+### Phase 4:
+- [x] Create a single router module that will work for any data model, rather than having separate router modules for every data module.
+- [x] Create a single “mongo” collection class that every data model can extend from, keeping the CRUD logic for our models very DRY
 
 ## Implementation Notes:
 

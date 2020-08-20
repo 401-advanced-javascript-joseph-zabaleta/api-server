@@ -8,7 +8,6 @@ const mockRequest = supertest(server);
 
 let version = '/api/v1';
 
-// mockRequest = mockRequest.bind(mockRequest, )
 
 let spyLog = jest.spyOn(console, 'log');
 let spyError = jest.spyOn(console, 'error');
