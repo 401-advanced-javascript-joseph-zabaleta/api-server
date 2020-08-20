@@ -2,6 +2,7 @@
 
 const { server } = require('../lib/models/server.js');
 const supertest = require('supertest');
+require('@code-fellows/supergoose');
 const mockRequest = supertest(server);
 
 let spyLog = jest.spyOn(console, 'log');
@@ -17,10 +18,10 @@ describe('Integration Tests on the Web Server', () => {
   it('Should respond with a 500 on an error', () => {
 
     return mockRequest
-      .get('/bad')
+      .post('/products')
       .then(results => {
         expect(results.status).toBe(500);
-      }).catch(console.error);
+      })
 
   });
 
@@ -30,7 +31,7 @@ describe('Integration Tests on the Web Server', () => {
       .get('/foobar')
       .then(results => {
         expect(results.status).toBe(404);
-      }).catch(console.error);
+      })
 
   });
 
@@ -40,26 +41,31 @@ describe('Integration Tests on the Web Server', () => {
       .post('/')
       .then(results => {
         expect(results.status).toBe(404);
-      }).catch(console.error);
+      })
 
   });
 
-  it('Should respond properly on request to /api/v1/products', () => {
+  it('Should respond properly on request to /products', () => {
 
     return mockRequest
-      .get('/api/v1/products')
+      .get('/products')
       .then(results => {
         expect(results.status).toBe(200);
-      }).catch(console.error);
-
+      })
   });
 
-  it('Should properly post to /api/v1/products', () => {
+  it('Should properly post to /products', () => {
+
+    let testObject = { name: 'Red Bike', category: "bikes", description: 'apple bin', price: 20, inStock: 5 };
+
     return mockRequest
-    .post('/api/v1/products')
-    .then(results => {
-        expect(results).toBe(200);
-    }).catch(console.error);
+    .post('/products')
+    .send(testObject)
+    .then( (res) => {
+        console.log('resssssss', res);
+        expect(res.status).toEqual(200);
+    });
+
   });
 
 });
