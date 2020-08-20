@@ -1,6 +1,7 @@
 'use strict';
 
-require('@code-fellows/supergoose');
+// require('@code-fellows/supergoose');
+require('../../supergoose.js');
 
 const CategoriesModel = require('../../../lib/models/categories/categories-model.js');
 

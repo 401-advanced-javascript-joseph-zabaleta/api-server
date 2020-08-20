@@ -1,6 +1,7 @@
 'use strict';
 
-require('@code-fellows/supergoose');
+// require('@code-fellows/supergoose');
+require('../../supergoose.js');
 
 const ProductModel = require('../../../lib/models/products/products-model.js');
 

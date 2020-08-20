@@ -2,7 +2,8 @@
 
 const { server } = require('../../../lib/models/server.js');
 const supertest = require('supertest');
-require('@code-fellows/supergoose');
+// require('@code-fellows/supergoose');
+require('../../supergoose.js');
 const mockRequest = supertest(server);
 
 let spyLog = jest.spyOn(console, 'log');
