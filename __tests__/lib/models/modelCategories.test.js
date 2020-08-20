@@ -2,7 +2,7 @@
 
 require('@code-fellows/supergoose');
 
-const CategoriesModel = require('../lib/models/categories/categories-model.js');
+const CategoriesModel = require('../../../lib/models/categories/categories-model.js');
 
 let testObject = { name: 'fruit', description: 'apple bin' };
 let testObject2 = { name: 'sports', description: 'sports bin' };

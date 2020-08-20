@@ -2,7 +2,7 @@
 
 require('@code-fellows/supergoose');
 
-const ProductModel = require('../lib/models/products/products-model.js');
+const ProductModel = require('../../../lib/models/products/products-model.js');
 
 let testObject = { name: 'Red Bike', category: "bikes", description: 'apple bin', price: 20, inStock: 5 };
 let testObject2 = { name: 'Blue Bike', category: "bikes", description: 'faster style biking', price: 200, inStock: 2 };
