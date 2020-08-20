@@ -35,13 +35,17 @@ describe('Testing Products Model Functionality: ', () => {
           return ProductModel.get(id)
       })
       .then(foundObject => {
-          Object.keys(testObject2).forEach(key => {
-              expect(foundObject[0][key]).toEqual(testObject2[key]);
-          });
+        expect(foundObject.length).toEqual(1);
+        Object.keys(testObject2).forEach(key => {
+            expect(foundObject[0][key]).toEqual(testObject2[key]);
+        });
       });
     });
 
     it('Should update() a product', () => {
+
+        let recordID;
+
         return ProductModel.get()
         .then(records => {
             return records[1]._id;
@@ -51,14 +55,16 @@ describe('Testing Products Model Functionality: ', () => {
                 name: 'Greeeeeeeeen Bike',
             };
 
+            recordID = id;
             return ProductModel.update(id, body);
 
         })
-        .then(results => {
-            return ProductModel.get(results._id);
+        .then( () => {
+            return ProductModel.get(recordID);
         })
         .then(foundObject => {
-            expect(foundObject[1].name).toEqual('Greeeeeeeeen Bike');
+            expect(foundObject.length).toEqual(1);
+            expect(foundObject[0].name).toEqual('Greeeeeeeeen Bike');
         })
     });
 

@@ -39,6 +39,7 @@ describe('Testing Categories Model Functionality: ', () => {
             return CategoriesModel.get(id)
         })
         .then(foundObject => {
+            expect(foundObject.length).toEqual(1);
             Object.keys(testObject2).forEach(key => {
                 expect(foundObject[0][key]).toEqual(testObject2[key]);
             });
@@ -47,6 +48,9 @@ describe('Testing Categories Model Functionality: ', () => {
 
 
     it('Should update() a category', () => {
+
+        let recordID;
+
         return CategoriesModel.get()
         .then(records => {
             return records[1]._id;
@@ -55,15 +59,16 @@ describe('Testing Categories Model Functionality: ', () => {
             let body = {
                 name: 'Skateboards',
             };
-
+            recordID = id;
             return CategoriesModel.update(id, body);
 
         })
-        .then(results => {
-            return CategoriesModel.get(results._id);
+        .then( () => {
+            return CategoriesModel.get(recordID);
         })
         .then(foundObject => {
-            expect(foundObject[1].name).toEqual('Skateboards');
+            expect(foundObject.length).toEqual(1);
+            expect(foundObject[0].name).toEqual('Skateboards');
         })
 
     });
