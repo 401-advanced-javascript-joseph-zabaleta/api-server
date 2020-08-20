@@ -6,6 +6,8 @@ const supertest = require('supertest');
 require('../../supergoose.js');
 const mockRequest = supertest(server);
 
+let version = '/api/v1';
+
 let spyLog = jest.spyOn(console, 'log');
 let spyError = jest.spyOn(console, 'error');
 
@@ -19,7 +21,7 @@ describe('Products IT Tests', () => {
     it('Should respond with a 500 on an error', () => {
 
         return mockRequest
-            .post('/products')
+            .post(version + '/products')
             .then(results => {
                 expect(results.status).toBe(500);
             });
@@ -29,7 +31,7 @@ describe('Products IT Tests', () => {
     it('Should respond properly on request to /products', () => {
 
         return mockRequest
-            .get('/products')
+            .get(version + '/products')
             .then(results => {
                 expect(results.status).toBe(200);
             });
@@ -40,7 +42,7 @@ describe('Products IT Tests', () => {
         let testObject = { name: 'Red Bike', category: "bikes", description: 'apple bin', price: 20, inStock: 5 };
 
         return mockRequest
-        .post('/products')
+        .post(version + '/products')
         .send(testObject)
         .then( (res) => {
             expect(res.status).toEqual(200);
@@ -55,20 +57,20 @@ describe('Products IT Tests', () => {
         let updatedObject = { name: 'Blue Bike', category: "bikes", description: 'apple bin', price: 50, inStock: 5 };
 
         return mockRequest
-            .post('/products')
+            .post(version + '/products')
             .send(testObject)
             .then( (res) => {
                 expect(res.status).toEqual(200);
                 let id = res.body._id;
 
                 return mockRequest
-                    .put('/products/' + id)
+                    .put(version + '/products/' + id)
                     .send(updatedObject)
                     .then((response) => {
                         expect(response.status).toEqual(200);
 
                         return mockRequest
-                            .get('/products/' + id)
+                            .get(version + '/products/' + id)
                             .then( (results) => {
                                 expect(results.status).toEqual(200);
                                 expect(results.body.length).toEqual(1);
@@ -85,19 +87,19 @@ describe('Products IT Tests', () => {
         let testObject = { name: 'Red Bike', category: "bikes", description: 'apple bin', price: 20, inStock: 5 };
 
         return mockRequest
-            .post('/products')
+            .post(version + '/products')
             .send(testObject)
             .then( (res) => {
                 expect(res.status).toEqual(200);
                 let id = res.body._id;
 
                 return mockRequest
-                    .delete('/products/' + id)
+                    .delete(version + '/products/' + id)
                     .then((response) => {
                         expect(response.status).toEqual(200);
 
                         return mockRequest
-                            .get('/products/' + id)
+                            .get(version + '/products/' + id)
                             .then( (results) => {
                                 expect(results.status).toEqual(200);
                                 expect(results.body.length).toEqual(0);

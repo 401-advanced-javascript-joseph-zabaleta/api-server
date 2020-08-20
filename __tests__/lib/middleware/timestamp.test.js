@@ -2,7 +2,7 @@
 
 const timestamp = require('../../../lib/middleware/timestamp.js');
 
-describe('Testing Timestamp Middleware Functionality', () => {
+describe('Testing Timestamp Middleware Functionality: ', () => {
 
 
     it('Should properly add a timestamp to the request', () => {
