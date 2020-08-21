@@ -1,8 +1,8 @@
 'use strict';
 
-const timestamp = require('../lib/middleware/timestamp.js');
+const timestamp = require('../../../lib/middleware/timestamp.js');
 
-describe('Testing Timestamp Middleware Functionality', () => {
+describe('Testing Timestamp Middleware Functionality: ', () => {
 
 
     it('Should properly add a timestamp to the request', () => {
@@ -16,7 +16,7 @@ describe('Testing Timestamp Middleware Functionality', () => {
         let next = jest.fn();
         timestamp(req, res, next);
 
-        let actual = res.requestTime;
+        let actual = req.requestTime;
 
         expect(actual).not.toBeNull();
 

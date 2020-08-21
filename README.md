@@ -4,7 +4,7 @@
 An Express/Node.js based server designed to be a “model agnostic” REST API server, which can perform CRUD operations on any data model
 
 Total Phases: 4
-Current Phase 2
+Current Phase 4
 
 
 ## Feature Tasks and Requirements
@@ -74,13 +74,46 @@ Your api will automatically respond to the following endpoints:
 
 - Note that as you build and test this server, your data will be lost every time you restart the server.
 
+### Phase 3: Modularizing and Persistence
+- Update the `index.js`
+    - [x] Require the mongoose library
+    - [x] Prior to calling `start()` on your imported server module, it connect to Mongo, via `mongoose`
+- Prepare the `server.js` for modularization
+    - [x] Require the category and product router modules (see the bullet points below)
+    - [x] `app.use()` each them in your app so that your routes will respond
+- Write new routing modules for your server
+    - [x] Create the files/folders: `routes/categories.js` and `routes/product.js`
+    - [x] Create a router module for each of your data types (in each)
+        - [x] Create an instance of `express.Router()` and export it
+        - [x] Move the appropriate route definitions and route handlers from `server.js` here
+        - [x] Redefine the definitions as `route` definitions (not `app` definitions)
+        - [x] Confirm that your server works as before, but now modular
+        - [x] Begin the conversion from memory data to persistent data …
+            - [x] Import and initialize the appropriate Mongoose Collection (see bullet points below)
+            - [x] In your handler methods, rather than change your in-memory data store, call the appropriate model methods
+- [x] Add Persistence with Mongoose Collections
+    - Work in `lib/models/categories` and `lib/models/products`
+    - [x] For each, create both a schema and collection file
+        - i.e. `categories.schema.js` and `categories.collection.js`
+- The schema file should define your data model as a Mongoose schema
+- The collection file should be a class that:
+    - [x] Imports the schema
+    - Exports a class with CRUD methods, coded to work with your schema
+        - [x] `read()` performs a `find()` query in your schema
+        - [x] `create()` performs a `save()` query in your schema for a new record
+        - [x] `update()` performs a `findOneByIdAndUpdate()` operation in your schema for an existing record
+        - [x] `delete()` performs a `findOneByIdAndDelete()` in your schema for a new record
+
+### Phase 4:
+- [x] Create a single router module that will work for any data model, rather than having separate router modules for every data module.
+- [x] Create a single “mongo” collection class that every data model can extend from, keeping the CRUD logic for our models very DRY
 
 ## Implementation Notes:
 
 
 ## User Acceptance Tests
 
-### Phase 2 Testing
+### Testing
 - [x] Use `supergoose` and `supertest` to easily test your server without having to start it.
 
 - Write unit tests for the middleware
