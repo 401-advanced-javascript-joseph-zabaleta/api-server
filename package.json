@@ -1,26 +1,28 @@
 {
-  "name": "1",
-  "version": "1.0.0",
-  "description": "Dynamic API Server",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
-  "scripts": {
-    "test": "jest --coverage --verbose",
-    "watch": "jest --watchAll --coverage --verbose"
-  },
-  "keywords": [],
-  "author": "joseph-zabaleta",
-  "license": "ISC",
-  "dependencies": {
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "jest": "^26.4.0",
-    "mongoose": "^5.10.0"
-  },
-  "devDependencies": {
-    "@code-fellows/supergoose": "^1.0.2",
-    "supertest": "^4.0.2"
-  }
+    "name": "1",
+    "version": "1.0.0",
+    "description": "Dynamic API Server",
+    "main": "index.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "scripts": {
+        "start": "node index.js",
+        "test": "jest --coverage --verbose",
+        "watch": "jest --watchAll --coverage --verbose"
+    },
+    "keywords": [],
+    "author": "joseph-zabaleta",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "jest": "^26.4.0",
+        "mongoose": "^5.10.0"
+    },
+    "devDependencies": {
+        "@code-fellows/supergoose": "^1.0.2",
+        "supertest": "^4.0.2"
+    }
 }
